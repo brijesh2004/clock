@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Clock</title>
+<style>
+#clockContainer{
+position:relative;
+margin:auto;
+width:40vw;
+height:40vw;
+background:url('clock.png') no-repeat;
+background-size:100%;
+}
+
+
+#hour,#minute, #second{
+position:absolute;
+background:black;
+border-radius:10px;
+transform-origin:bottom;
+}
+
+#hour{
+width:1.4%;
+height:23%;
+top:27%;
+left:49.5%;
+
+
+}
+
+#minute{
+width:1.2%;
+height:27%;
+top:23%;
+left:49.5%;
+opacity:0.8;
+
+}
+
+#second{
+width:1%;
+height:32%;
+top:18%;
+left:49.5%;
+opacity:0.8;
+
+
+}
+
+</style>
+<script>
+setInterval(() => {
+d = new Date();
+htime = d.getHours();
+mtime = d.getMinutes();
+stime = d.getSeconds();
+hrotation = 30*htime + mtime/2;
+mrotation =6*mtime;
+srotation =6*stime;
+
+hour.style.transform=`rotate(${hrotation}deg)`;
+minute.style.transform=`rotate(${mrotation}deg)`;
+second.style.transform=`rotate(${srotation}deg)`;
+
+},1000);
+
+</script>
+</head>
+
+<body>
+
+
+
+<div id="clockContainer">
+<div id="hour" ></div>
+<div id="minute" ></div>
+<div id="second" ></div>
+</div>
+
+
+
+</body>
+</html>
